@@ -1,13 +1,16 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.loginInput {
+  @apply focus:border-green-500 mb-2 p-2 w-full rounded-xl border-2 shadow-md outline-none  focus:ring-0;
+}
+.loginForm {
+  @apply flex w-10/12 max-w-xs flex-col items-start justify-center gap-2 rounded-xl border-2 p-6 text-sm font-semibold;
+}
+.loginButton {
+  @apply bg-green-500 text-white mx-auto mt-10 w-1/2 rounded-lg p-2 text-center text-sm md:text-base;
+}
+.eyeButton {
+  @apply text-green-500 absolute top-10 md:top-12 right-2 text-lg;
 }
