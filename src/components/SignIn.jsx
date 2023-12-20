@@ -2,7 +2,7 @@ import Input from "./input";
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import MainPage from "./MainPage";
+import { useNavigate } from "react-router-dom";
 
 const loginValidationSchema = Yup?.object()?.shape({
   email: Yup?.string()?.email()?.required("Email is required"),
@@ -10,6 +10,7 @@ const loginValidationSchema = Yup?.object()?.shape({
 });
 
 export default function SignIn() {
+  const navigate = useNavigate();
   const loginFormik = useFormik({
     validationSchema: loginValidationSchema,
     initialValues: {
@@ -18,7 +19,7 @@ export default function SignIn() {
     },
     onSubmit: async (values) => {
       setTimeout(() => {
-        alert("Form is Validated! Login Successful", values);
+        navigate("/home");
       }, 1000);
     },
   });
