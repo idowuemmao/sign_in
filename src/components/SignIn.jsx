@@ -1,5 +1,5 @@
 import Input from "./input";
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -19,8 +19,9 @@ export default function SignIn() {
     },
     onSubmit: async (values) => {
       setTimeout(() => {
-        navigate("/home");
+        navigate("/home", { state: { user: values } });
       }, 1000);
+      //   console.log(value);
     },
   });
   return (
@@ -51,3 +52,5 @@ export default function SignIn() {
     </div>
   );
 }
+
+
