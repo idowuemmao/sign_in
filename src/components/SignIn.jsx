@@ -2,6 +2,7 @@ import Input from "./input";
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import MainPage from "./MainPage";
 
 const loginValidationSchema = Yup?.object()?.shape({
   email: Yup?.string()?.email()?.required("Email is required"),
@@ -23,7 +24,7 @@ export default function SignIn() {
   });
   return (
     <div className="relative mt-10 grid w-full place-items-center gap-8 font-serif">
-      <h2 className=" text-sm font-bold">Kindly Log in</h2>
+      <h2 className=" text-4xl font-bold">Kindly Log in</h2>
       <form className="loginForm" onSubmit={loginFormik?.handleSubmit}>
         <Input
           name="email"
@@ -46,12 +47,6 @@ export default function SignIn() {
           Log in
         </button>
       </form>
-      {/* <p className="mt-4 w-full text-center">
-        Don`t have an account?{" "}
-        <a href="/sign_up" className="text-green-500">
-          Sign Up
-        </a>
-      </p> */}
     </div>
   );
 }

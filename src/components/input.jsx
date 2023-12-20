@@ -35,12 +35,13 @@ const Input = ({
         onBlur={onBlur}
         {...props}
       />
+
       {type === "password" && (
         <button type="button" onClick={onPasswordClick}>
           {showPassword ? (
-            <AiFillEyeInvisible className="eyeButton" />
-          ) : (
             <AiFillEye className="eyeButton" />
+          ) : (
+            <AiFillEyeInvisible className="eyeButton" />
           )}
         </button>
       )}

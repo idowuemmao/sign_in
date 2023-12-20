@@ -1,8 +1,8 @@
 import SignIn from "./components/SignIn.jsx";
-import "./index.css";
+
 function App() {
   return (
-    <div className="App">
+    <div className="h-screen grid place-items-center w-full">
       <SignIn />
     </div>
   );
