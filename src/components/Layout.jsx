@@ -1,7 +1,11 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import logo from "../images/logo.png";
+
 const Layout = () => {
+  const location = useLocation();
+  const user = location?.state?.user;
+
   return (
     <div className="relative w-full min-h-full h-fit">
       <div className="sticky top-0 z-20">
@@ -9,7 +13,7 @@ const Layout = () => {
           <a href="/">
             <img src={logo} alt="logo" className="w-12" />
           </a>
-          <p>Welcome Onboard</p>
+          <p>Welcome Onboard {user && <span>{user.firstName}</span>}</p>
         </header>
       </div>
       <div className="min-h-screen h-full flex flex-col items-center justify-center">

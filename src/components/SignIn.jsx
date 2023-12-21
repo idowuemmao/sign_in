@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const loginValidationSchema = Yup?.object()?.shape({
   email: Yup?.string()?.email()?.required("Email is required"),
   password: Yup?.string()?.required("Password is required"),
+  firstName: Yup?.string()?.required("First Name is required"),
 });
 
 export default function SignIn() {
@@ -16,6 +17,7 @@ export default function SignIn() {
     initialValues: {
       email: "",
       password: "",
+      firstName: "User",
     },
     onSubmit: async (values) => {
       setTimeout(() => {

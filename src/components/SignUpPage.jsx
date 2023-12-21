@@ -10,10 +10,15 @@ const SignUpPage = () => {
     <div className="grid place-items-center h-full">
       <img src={congrats} alt="congratulation" />
       {user && (
-        <div className="shad text-center p-4 bg-yellow-500 rounded-xl text-lg md:text-3xl">
+        <div className="shadow-lg text-center w-fit items-center flex flex-col p-2 py-4 bg-yellow-500 rounded-xl text-sm md:text-lg ">
           <p className="text-xs italic ">
             You Signed up with the details below
           </p>
+          <img
+            src={URL.createObjectURL(user.profileImage)}
+            alt="profile"
+            className="w-28 rounded-lg object-contain"
+          />
           <p className="p-4">
             User's Fullname:{" "}
             <span className="underline font-serif font-bold">
