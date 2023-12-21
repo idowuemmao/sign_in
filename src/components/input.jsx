@@ -21,7 +21,7 @@ const Input = ({
   };
   return (
     <div className="relative grid w-full gap-2">
-      <label htmlFor="password" className="text-base md:text-lg">
+      <label htmlFor="password" className="text-sm md:text-lg">
         {label}
       </label>
       <input

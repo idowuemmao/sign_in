@@ -31,14 +31,14 @@ export default function SignUp() {
     },
     onSubmit: async (values) => {
       setTimeout(() => {
-        navigate("/home", { state: { user: values } });
+        navigate("/welcome", { state: { user: values } });
       }, 1000);
     },
   });
 
   return (
     <div className="my-10 grid w-full place-items-center gap-4 font-serif">
-      <h2 className=" text-2xl font-bold">Admin Sign Up</h2>
+      <h2 className=" text-2xl font-bold">Kindly Sign Up</h2>
       <form className="loginForm" onSubmit={signUpFormik?.handleSubmit}>
         <h3 className="text-yellow-500 pb-2 font-semibold">
           Personal Information

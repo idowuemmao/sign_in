@@ -24,8 +24,8 @@ export default function SignIn() {
     },
   });
   return (
-    <div className="mt-10 h-lvh flex flex-col w-full place-items-center gap-8 font-serif">
-      <h2 className=" text-4xl font-bold">Kindly Log in</h2>
+    <div className="mt-10 flex flex-col w-full items-center justify-center gap-8 font-serif">
+      <h2 className="text-2xl md:text-4xl font-bold">Kindly Log in</h2>
       <form className="loginForm" onSubmit={loginFormik?.handleSubmit}>
         <Input
           name="email"
@@ -48,7 +48,7 @@ export default function SignIn() {
           Log in
         </button>
       </form>
-      <p className="mt-2 w-full text-center">
+      <p className="mt-2 w-full text-center text-sm md:text-lg">
         Don't have an account?{" "}
         <a href="/sign-up" className="text-yellow-500 ">
           Sign Up
