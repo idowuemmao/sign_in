@@ -4,9 +4,19 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 
+const getCharacterValidationError = (str) => {
+  return `Your password must have at least 1 ${str} character`;
+};
+
 const loginValidationSchema = Yup?.object()?.shape({
   email: Yup?.string()?.email()?.required("Email is required"),
-  password: Yup?.string()?.required("Password is required"),
+  password: Yup?.string()
+    .min(8, "Password must be at least 8 characters")
+    .matches(/[0-9]/, getCharacterValidationError("digit"))
+    .matches(/[a-z]/, getCharacterValidationError("lowercase"))
+    .matches(/[A-Z]/, getCharacterValidationError("uppercase"))
+
+    .required("Password is required"),
   firstName: Yup?.string()?.required("First Name is required"),
 });
 
