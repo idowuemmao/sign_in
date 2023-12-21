@@ -10,7 +10,7 @@ const SignUpPage = () => {
     <div className="grid place-items-center h-full">
       <img src={congrats} alt="congratulation" />
       {user && (
-        <div className="shadow-lg text-center p-4 bg-yellow-500 rounded-xl text-lg md:text-3xl">
+        <div className="shad text-center p-4 bg-yellow-500 rounded-xl text-lg md:text-3xl">
           <p className="text-xs italic ">
             You Signed up with the details below
           </p>
