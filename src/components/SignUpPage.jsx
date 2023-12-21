@@ -1,15 +1,16 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import congrats from "../images/congrats.png";
+import celebrate from "../images/celebrate.jpg";
 
 const SignUpPage = () => {
   const location = useLocation();
   const user = location?.state?.user;
-  //   console.log(user);
   return (
     <div className="grid place-items-center h-full">
-      <h2 className="text-lg md:text-3xl">Welcome to the Home page</h2>
+      <img src={congrats} alt="congratulation" />
       {user && (
-        <div className="border-2 text-center p-4 bg-yellow-500 rounded-xl text-lg md:text-3xl">
+        <div className="shadow-lg text-center p-4 bg-yellow-500 rounded-xl text-lg md:text-3xl">
           <p className="text-xs italic ">
             You Signed up with the details below
           </p>
@@ -34,6 +35,7 @@ const SignUpPage = () => {
       <button className="loginButton">
         <a href="/">Sign Out</a>
       </button>
+      <img src={celebrate} alt="celebrate" className="absolute -z-20 left-0" />
     </div>
   );
 };
