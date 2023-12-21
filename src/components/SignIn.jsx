@@ -3,6 +3,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import logo from "../images/logo.png";
 
 const getCharacterValidationError = (str) => {
   return `Your password must have at least 1 ${str} character`;
@@ -18,6 +19,7 @@ const loginValidationSchema = Yup?.object()?.shape({
 
     .required("Password is required"),
   firstName: Yup?.string()?.required("First Name is required"),
+  profileImage: Yup?.mixed()?.required("Profile Image is required"),
 });
 
 export default function SignIn() {
@@ -28,6 +30,7 @@ export default function SignIn() {
       email: "",
       password: "",
       firstName: "User",
+      profileImage: logo,
     },
     onSubmit: async (values) => {
       setTimeout(() => {
