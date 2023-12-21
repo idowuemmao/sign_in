@@ -11,7 +11,11 @@ const Layout = () => {
       <div className="sticky top-0 z-20">
         <header className="bg-yellow-500 w-full p-2 px-6 font-bold text-black flex items-center justify-between ">
           <a href="/">
-            <img src={logo} alt="logo" className="w-12" />
+            <img
+              src={user ? URL.createObjectURL(user.profileImage) : logo}
+              alt="logo"
+              className="w-12 rounded-full"
+            />
           </a>
           <p>Welcome Onboard {user && <span>{user.firstName}</span>}</p>
         </header>
