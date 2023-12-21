@@ -9,7 +9,7 @@
   @apply flex w-10/12 max-w-xs flex-col items-start justify-center gap-2 rounded-xl border-2 p-6 text-sm font-semibold;
 }
 .loginButton {
-  @apply bg-yellow-500 text-black mx-auto mt-10 w-1/2 rounded-lg p-2 text-center text-sm md:text-base;
+  @apply bg-yellow-500 text-black mx-auto mt-10 w-1/2 rounded-lg p-2 text-center text-sm md:text-base hover:bg-yellow-800 hover:text-white;
 }
 .eyeButton {
   @apply text-yellow-500 absolute top-10 md:top-12 right-2 text-lg;

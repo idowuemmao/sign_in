@@ -1,5 +1,5 @@
 import Input from "./input";
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -21,11 +21,10 @@ export default function SignIn() {
       setTimeout(() => {
         navigate("/home", { state: { user: values } });
       }, 1000);
-      //   console.log(value);
     },
   });
   return (
-    <div className="relative mt-10 grid w-full place-items-center gap-8 font-serif">
+    <div className="mt-10 h-lvh flex flex-col w-full place-items-center gap-8 font-serif">
       <h2 className=" text-4xl font-bold">Kindly Log in</h2>
       <form className="loginForm" onSubmit={loginFormik?.handleSubmit}>
         <Input
@@ -49,8 +48,12 @@ export default function SignIn() {
           Log in
         </button>
       </form>
+      <p className="mt-2 w-full text-center">
+        Don't have an account?{" "}
+        <a href="/sign-up" className="text-yellow-500 ">
+          Sign Up
+        </a>
+      </p>
     </div>
   );
 }
-
-
