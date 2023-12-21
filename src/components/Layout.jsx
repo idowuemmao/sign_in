@@ -12,7 +12,7 @@ const Layout = () => {
         <header className="bg-yellow-500 w-full p-2 px-6 font-bold text-black flex items-center justify-between ">
           <a href="/">
             <img
-              src={user ? URL.createObjectURL(user.profileImage) : logo}
+              src={logo}
               alt="logo"
               className="w-12 rounded-full"
             />
