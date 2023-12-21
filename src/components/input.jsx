@@ -47,7 +47,7 @@ const Input = ({
       )}
       {Icon && <Icon />}
       {error && (
-        <p className="text-red-500 absolute right-0 top-0 text-[0.45rem] sm:text-[0.65rem]">
+        <p className="text-red-500 absolute right-0 top-0 text-[0.4rem] sm:text-[0.65rem]">
           {error}
         </p>
       )}

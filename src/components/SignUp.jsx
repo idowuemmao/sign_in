@@ -4,13 +4,22 @@ import * as Yup from "yup";
 import Input from "./input";
 import { useNavigate } from "react-router-dom";
 
+const getCharacterValidationError = (str) => {
+  return `Your password must have at least 1 ${str} character`;
+};
 const signUpValidationSchema = Yup?.object()?.shape({
   firstName: Yup?.string()?.required("First Name is required"),
   lastName: Yup?.string()?.required("Last Name is required"),
   email: Yup?.string()
     ?.email("Invalid email address")
     ?.required("Email is required"),
-  password: Yup?.string()?.required("Password is required"),
+  password: Yup?.string()
+    .min(8, "Password must be at least 8 characters")
+    .matches(/[0-9]/, getCharacterValidationError("digit"))
+    .matches(/[a-z]/, getCharacterValidationError("lowercase"))
+    .matches(/[A-Z]/, getCharacterValidationError("uppercase"))
+
+    .required("Password is required"),
   confirmPassword: Yup?.string()
     .oneOf([Yup.ref("password"), null], "Password does not match")
     .required("Confirmed Password is required"),
