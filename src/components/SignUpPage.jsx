@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import congrats from "../images/congrats.png";
 import celebrate from "../images/celebrate.jpg";
@@ -6,6 +6,7 @@ import celebrate from "../images/celebrate.jpg";
 const SignUpPage = () => {
   const location = useLocation();
   const user = location?.state?.user;
+
   return (
     <div className="grid place-items-center h-full">
       <img src={congrats} alt="congratulation" />

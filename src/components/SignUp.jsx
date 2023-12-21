@@ -18,7 +18,6 @@ const signUpValidationSchema = Yup?.object()?.shape({
     .matches(/[0-9]/, getCharacterValidationError("digit"))
     .matches(/[a-z]/, getCharacterValidationError("lowercase"))
     .matches(/[A-Z]/, getCharacterValidationError("uppercase"))
-
     .required("Password is required"),
   confirmPassword: Yup?.string()
     .oneOf([Yup.ref("password"), null], "Password does not match")

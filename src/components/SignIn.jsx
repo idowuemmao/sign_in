@@ -19,7 +19,7 @@ const loginValidationSchema = Yup?.object()?.shape({
 
     .required("Password is required"),
   firstName: Yup?.string()?.required("First Name is required"),
-  profileImage: Yup?.mixed()?.required("Profile Image is required"),
+  // profileImage: Yup?.mixed()?.required("Profile Image is required"),
 });
 
 export default function SignIn() {
@@ -30,7 +30,7 @@ export default function SignIn() {
       email: "",
       password: "",
       firstName: "User",
-      profileImage: logo,
+      // profileImage: logo,
     },
     onSubmit: async (values) => {
       setTimeout(() => {
