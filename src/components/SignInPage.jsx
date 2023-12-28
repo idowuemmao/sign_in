@@ -10,7 +10,11 @@ const SignInPage = () => {
     <div className="grid place-items-center h-full">
       <img src={congrats} alt="congratulation" />
       {user && (
-        <div className="shadow-lg text-center p-4 bg-yellow-500 rounded-xl text-lg md:text-3xl">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="2000"
+          className="shadow-lg text-center p-4 bg-yellow-500 rounded-xl text-lg md:text-3xl"
+        >
           <p className="text-xs italic ">
             You Logged in with the details below
           </p>
@@ -26,9 +30,17 @@ const SignInPage = () => {
           </p>
         </div>
       )}
-      <button className="loginButton">
-        <a href="/">Sign Out</a>
-      </button>
+      <div
+        className="w-full flex items-center"
+        data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="2000"
+      >
+        <button className="loginButton">
+          <a href="/">Sign Out</a>
+        </button>
+      </div>
       <img src={celebrate} alt="celebrate" className="absolute -z-20 left-0" />
     </div>
   );

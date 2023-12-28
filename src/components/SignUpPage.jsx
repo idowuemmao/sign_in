@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import congrats from "../images/congrats.png";
 import celebrate from "../images/celebrate.jpg";
@@ -11,7 +11,11 @@ const SignUpPage = () => {
     <div className="grid place-items-center h-full">
       <img src={congrats} alt="congratulation" />
       {user && (
-        <div className="shadow-lg text-center w-fit items-center flex flex-col p-2 py-4 bg-yellow-500 rounded-xl text-sm md:text-lg ">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="2000"
+          className="shadow-lg text-center w-fit items-center flex flex-col p-2 py-4 bg-yellow-500 rounded-xl text-sm md:text-lg "
+        >
           <p className="text-xs italic ">
             You Signed up with the details below
           </p>
@@ -38,9 +42,17 @@ const SignUpPage = () => {
           </p>
         </div>
       )}
-      <button className="loginButton">
-        <a href="/">Sign Out</a>
-      </button>
+      <div
+        className="w-full flex items-center"
+        data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="2000"
+      >
+        <button className="loginButton">
+          <a href="/">Sign Out</a>
+        </button>
+      </div>
       <img src={celebrate} alt="celebrate" className="absolute -z-20 left-0" />
     </div>
   );
