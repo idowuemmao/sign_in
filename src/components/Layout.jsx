@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import logo from "../images/logo.png";
+import logo from "../images/logo.jpg";
 
 const Layout = () => {
   const location = useLocation();
