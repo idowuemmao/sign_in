@@ -12,7 +12,7 @@ const loginValidationSchema = Yup?.object()?.shape({
   email: Yup?.string()?.email()?.required("Email is required"),
   password: Yup?.string()
     .min(8, "Password must be at least 8 characters")
-    .matches(/[0-9]/, getCharacterValidationError("digit"))
+    .matches(/\d/, getCharacterValidationError("digit"))
     .matches(/[a-z]/, getCharacterValidationError("lowercase"))
     .matches(/[A-Z]/, getCharacterValidationError("uppercase"))
 
